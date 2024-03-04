@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package example_service;
+
+option go_package = "./data";
+
+import "sensitive.proto";
+
+message TestMessage {
+  string password = 1 [(sensitive) = {}];
+  string login = 2;
+  map<string, string> contacts = 3  [(sensitive) = {map_keys_to_redact:["phone", "email"]}];
+  repeated string follow_ids = 4 [(sensitive) = {}];
+}
