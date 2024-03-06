@@ -1,4 +1,4 @@
-module bishamon
+module github.com/nenormalka/bishamon
 
 go 1.21.5
 
